@@ -27,16 +27,52 @@
 //     }
 // }
 
-struct MyString<'a>{
-    text: &'a str,
+// struct MyString<'a>{
+//     text: &'a str,
+// }
+
+
+                                        //section 4 Assignment
+                    /*Create a struct called Car with the fields: mpg, color, and top_speed. 
+                    Once the struct is created, implement the following methods: set_mpg, set_color, and set_top_speed.
+                    Once you have created these methods, create a car, provide it default values, 
+                    and then set the mpg, color, and top speed and then print them out. */
+
+struct Car{
+    mpg: u32,
+    color: String,
+    top_speed: u32,
+}
+
+impl Car{
+    fn set_mpg(&mut self, new_mpg: u32){
+        self.mpg = new_mpg;
+    }
+    fn set_color(&mut self, new_color:String){
+        self.color = new_color;
+    }
+    fn set_top_speed(&mut self, new_top_speed:u32){
+        self.top_speed = new_top_speed;
+    }
 }
 
 
 fn main() {
 
-    let str1 = String::from("This is my string");
-    let x = MyString{text:str1.as_str()};
-    let s :&'static str = "I have a static Lifetime";
+    let mut car1 = Car{mpg:3, color:String::from("Blue"),top_speed:100};
+    println!("{}",car1.mpg);
+    println!("{}",car1.color);
+    println!("{}",car1.top_speed);
+    car1.set_mpg(5);
+    car1.set_color(String::from("Red"));
+    car1.set_top_speed(120);
+    println!("{}",car1.mpg);
+    println!("{}",car1.color);
+    println!("{}",car1.top_speed);
+
+    // let str1 = String::from("This is my string");
+    // let x = MyString{text:str1.as_str()};
+    // let s :&'static str = "I have a static Lifetime";
 
 //     let user1 = User{active:true, username: String::from("Rf"), sign_in_count: 12};
 //     println!("{}", user1.username);
