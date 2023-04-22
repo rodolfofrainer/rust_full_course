@@ -27,7 +27,16 @@
 //     }
 // }
 
+struct MyString<'a>{
+    text: &'a str,
+}
+
+
 fn main() {
+
+    let str1 = String::from("This is my string");
+    let x = MyString{text:str1.as_str()}
+
 //     let user1 = User{active:true, username: String::from("Rf"), sign_in_count: 12};
 //     println!("{}", user1.username);
 
@@ -47,23 +56,20 @@ fn main() {
     // square.change_width(12);
     // println!("{}", square.whats_my_width());
 
-
-
-
-    let r;
-    {
-        let x=5;
-        r = &x;
-    }// x is dropped here
-    println!("{}", r); //borrow used(no value)
+    // let r;
+    // {
+    //     let x=5;
+    //     r = &x;
+    // }// x is dropped here
+    // println!("{}", r); //borrow used(no value)
 
     //i32
     //&'a i32
     //&'a mut i32
 
-    fn example<'a, 'b>(x: &'a str, y: &'b str) -> 'a str{
-        x
-    } //'a for a parameter, 'b for a second parameter
+    // fn example<'a, 'b>(x: &'a str, y: &'b str) -> 'a str{
+    //     x
+ //'a for a parameter, 'b for a second parameter
 }
 
 
