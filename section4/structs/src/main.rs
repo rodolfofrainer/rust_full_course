@@ -35,7 +35,8 @@ struct MyString<'a>{
 fn main() {
 
     let str1 = String::from("This is my string");
-    let x = MyString{text:str1.as_str()}
+    let x = MyString{text:str1.as_str()};
+    let s :&'static str = "I have a static Lifetime";
 
 //     let user1 = User{active:true, username: String::from("Rf"), sign_in_count: 12};
 //     println!("{}", user1.username);
